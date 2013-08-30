@@ -36,8 +36,19 @@ class Spotify {
 
 		// uri segments
 		$this->uri_segments = explode(":", $this->uri);
-		$this->uri_id = end($this->uri_segments); // always last segment
-		$this->uri_type = prev($this->uri_segments); // second to last segment
+		$last_segment = end($this->uri_segments);
+		$second_last_segment = prev($this->uri_segments);
+
+		if ($last_segment == "starred")
+		{
+			$this->uri_id = $second_last_segment;
+			$this->uri_type = $last_segment;
+		}
+		else
+		{
+			$this->uri_id = $last_segment;
+			$this->uri_type = $second_last_segment;
+		}
 	}
 
 	/**
@@ -84,10 +95,14 @@ class Spotify {
 	public function link()
 	{
 		$url = "http://open.spotify.com/";
+		$username = $this->uri_segments[2];
 
-		if ($this->uri_type == "playlist")
+		if ($this->uri_type == "starred") // user's starred playlist?
 		{
-			$username = $this->uri_segments[2];
+			$link = $url . 'user/' . $username . '/starred';
+		}
+		elseif ($this->uri_type == "playlist") // playlist?
+		{
 			$link = $url . 'user/' . $username . '/' . $this->uri_type . '/' . $this->uri_id;
 		}
 		else
