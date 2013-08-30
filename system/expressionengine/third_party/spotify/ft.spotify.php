@@ -50,67 +50,6 @@ class Spotify_ft extends EE_Fieldtype {
 		return $data;
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	* Display Global Settings
-	*
-	* @access  public
-	* @return  form contents
-	*
-	*/
-	function display_global_settings()
-	{
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Save Global Settings
-	*
-	* @access  public
-	* @return  global settings
-	*
-	*/
-	function save_global_settings()
-	{
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Display Settings Screen
-	*
-	* @access  public
-	* @return  default global settings
-	*
-	*/
-	function display_settings($data)
-	{   
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	* Save Settings
-	*
-	* @access  public
-	* @return  field settings
-	*
-	*/
-	function save_settings($data)
-	{
-		// die(ee()->input);
-		// return array(
-		// 	'latitude'  => ee()->input->post('latitude'),
-		// 	'longitude' => ee()->input->post('longitude'),
-		// 	'zoom'      => ee()->input->post('zoom')
-		// );
-		return array();
-	}
-
-	// --------------------------------------------------------------------
-
 	/**
 	* Install Fieldtype
 	*
