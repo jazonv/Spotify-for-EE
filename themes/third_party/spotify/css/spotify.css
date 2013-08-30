@@ -1,0 +1,11 @@
+.spotify-field {
+	margin-top: 11px;
+}
+.spotify-response.loading {
+	background: url(../img/loader.gif) 0 100% no-repeat;
+	height: 24px;
+}
+.spotify-response p {
+	margin-left: 0;
+	font-size: 11px;
+}
