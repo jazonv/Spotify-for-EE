@@ -56,10 +56,10 @@ class Spotify {
 	 */
 	public function widget()
 	{
-		$width = ($this->EE->TMPL->fetch_param('width')) ? $this->EE->TMPL->fetch_param('width') : 250;
-		$height = ($this->EE->TMPL->fetch_param('height')) ? $this->EE->TMPL->fetch_param('height') : 330;
+		$width = $this->EE->TMPL->fetch_param('width', 250);
+		$height = $this->EE->TMPL->fetch_param('height', 330);
 		$theme = $this->EE->TMPL->fetch_param('theme');
-		$show_art = (bool) preg_match('/1|on|yes|y|true/i', $this->EE->TMPL->fetch_param('show_art'));
+		$show_art = $this->EE->TMPL->fetch_param('show_art');
 
 		// ensure not above max dimensions
 		$width = ($width > 640) ? 640 : $width;
